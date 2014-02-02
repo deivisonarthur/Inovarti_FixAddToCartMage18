@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Inovarti_FixAddToCartMage18>
+      <version>0.1.0</version>
+    </Inovarti_FixAddToCartMage18>
+  </modules>
+  <global>
+    <helpers>
+      <fixaddtocartmage18>
+        <class>Inovarti_FixAddToCartMage18_Helper</class>
+      </fixaddtocartmage18>
+    </helpers>
+  </global>
+  <frontend>
+      <events>
+          <add_to_cart_before>
+              <observers>
+                  <inovarti_fixaddtocartmage18_add_to_cart_before>
+                      <type>singleton</type>
+                      <class>inovarti_fixaddtocartmage18/observer</class>
+                      <method>fixcart</method>
+                  </inovarti_fixaddtocartmage18_add_to_cart_before>
+              </observers>
+          </add_to_cart_before>
+      </events>
+  </frontend>
+</config>
