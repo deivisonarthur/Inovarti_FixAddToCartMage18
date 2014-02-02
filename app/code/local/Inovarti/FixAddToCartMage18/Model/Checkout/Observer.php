@@ -18,17 +18,14 @@
 class Inovarti_FixAddToCartMage18_Model_Checkout_Observer
 {
 
-    function fixcart($observer)
+    function disableCsrf($observer)
     {
         $key = Mage::getSingleton('core/session')->getFormKey();
         $observer->getEvent()->getRequest()->setParam('form_key', $key);
 
-        //$request = $observer->getEvent()->getRequest()->getParams();
-        //Mage::log("Produto ".$request['product']." add form_key before add to cart", "fix.log");
+        $request = $observer->getEvent()->getRequest()->getParams();
+        Mage::log("Produto ".$request['product']." add form_key before add to cart", "fixmage18.log");
 
-        print_r($observer);
-        Mage::log("Produto add form_key before add to cart", null, 'fix.log');
     }
-
 
 }
