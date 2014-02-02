@@ -5,15 +5,17 @@
       <version>0.1.0</version>
     </Inovarti_FixAddToCartMage18>
   </modules>
-  <events>
-      <add_to_cart_before>
-          <observers>
-              <inovarti_fixaddtocartmage18_observer_add_to_cart_before>
-                  <type>singleton</type>
-                  <class>inovarti_fixaddtocartmage18/checkout_observer</class>
-                  <method>disableCsrf</method>
-              </inovarti_fixaddtocartmage18_observer_add_to_cart_before>
-          </observers>
-      </add_to_cart_before>
-  </events>
+  <global>
+      <events>
+          <add_to_cart_before>
+              <observers>
+                  <inovarti_fixaddtocartmage18_observer_add_to_cart_before>
+                      <type>singleton</type>
+                      <class>inovarti_fixaddtocartmage18/checkout_observer</class>
+                      <method>disableCsrf</method>
+                  </inovarti_fixaddtocartmage18_observer_add_to_cart_before>
+              </observers>
+          </add_to_cart_before>
+      </events>
+  </global>
 </config>
