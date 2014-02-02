@@ -5,3 +5,8 @@ The module was created because it is the new "form_key" parameter added to POST 
 
 For "add to cart" event, I've added to the fixcart where I form_key replace the parameter with the session form_key to pass the csrf check and let customers add products to cart. 
 It disables the csrf protection for the "add to cart" action but it's just like Magento < 1.8
+
+
+
+Fix for the treatment of the empty basket in Magento 1.8 using Varnish
+=====================================
