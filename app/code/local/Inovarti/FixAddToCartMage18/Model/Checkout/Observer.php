@@ -15,16 +15,20 @@
  * deivison.arthur@gmail.com so we can send you a copy immediately.
  *
  */
-class Inovarti_FixAddToCartMage18_Model_Observer
+class Inovarti_FixAddToCartMage18_Model_Checkout_Observer
 {
 
-    public function fixcart($observer)
+    function fixcart($observer)
     {
         $key = Mage::getSingleton('core/session')->getFormKey();
         $observer->getEvent()->getRequest()->setParam('form_key', $key);
 
-        $request = $observer->getEvent()->getRequest()->getParams();
-        Mage::log("Produto ".$request['product']." add form_key before add to cart");
+        //$request = $observer->getEvent()->getRequest()->getParams();
+        //Mage::log("Produto ".$request['product']." add form_key before add to cart", "fix.log");
+
+        print_r($observer);
+        Mage::log("Produto add form_key before add to cart", null, 'fix.log');
     }
+
 
 }

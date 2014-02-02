@@ -14,15 +14,17 @@
   </global>
   <frontend>
       <events>
+
           <add_to_cart_before>
               <observers>
-                  <inovarti_fixaddtocartmage18_add_to_cart_before>
+                  <inovarti_fixaddtocartmage18_observer_add_to_cart_before>
                       <type>singleton</type>
-                      <class>inovarti_fixaddtocartmage18/observer</class>
+                      <class>inovarti_fixaddtocartmage18/checkout_observer</class>
                       <method>fixcart</method>
-                  </inovarti_fixaddtocartmage18_add_to_cart_before>
+                  </inovarti_fixaddtocartmage18_observer_add_to_cart_before>
               </observers>
           </add_to_cart_before>
+
       </events>
   </frontend>
 </config>
