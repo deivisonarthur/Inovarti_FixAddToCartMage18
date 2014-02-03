@@ -6,6 +6,13 @@
     </Inovarti_FixAddToCartMage18>
   </modules>
   <global>
+      <models>
+          <checkout>
+              <rewrite>
+                  <cart>inovarti_fixaddtocartmage18_Model_Checkout_Cart</cart>
+              </rewrite>
+          </checkout>
+      </models>
       <events>
           <add_to_cart_before>
               <observers>
