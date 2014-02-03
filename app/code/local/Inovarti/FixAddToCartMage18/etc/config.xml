@@ -6,23 +6,44 @@
     </Inovarti_FixAddToCartMage18>
   </modules>
   <global>
-      <models>
-          <checkout>
-              <rewrite>
-                  <cart>Inovarti_FixAddToCartMage18_Model_Checkout_Cart</cart>
-              </rewrite>
-          </checkout>
-      </models>
-      <events>
-          <checkout_cart_product_add_before>
-              <observers>
-                  <inovarti_fixaddtocartmage18_observer_checkout_cart_product_add_before>
-                      <type>singleton</type>
-                      <class>inovarti_fixaddtocartmage18/checkout_observer</class>
-                      <method>disableCsrf</method>
-                  </inovarti_fixaddtocartmage18_observer_checkout_cart_product_add_before>
-              </observers>
-          </checkout_cart_product_add_before>
-      </events>
+	   <models>
+            <fixaddtocartmage18>
+                  <class>Inovarti_FixAddToCartMage18_Model</class>
+           </fixaddtocartmage18>
+        </models>
+	    <events>
+            <controller_action_predispatch>
+                <observers>
+                    <controller_action_before>
+                        <class>fixaddtocartmage18/observer</class>
+                        <method>hookToControllerActionPreDispatch</method>
+                    </controller_action_before>
+                </observers>
+            </controller_action_predispatch>
+            <controller_action_postdispatch>
+                <observers>
+                    <controller_action_after>
+                        <class>fixaddtocartmage18/observer</class>
+                        <method>hookToControllerActionPostDispatch</method>
+                    </controller_action_after>
+                </observers>
+            </controller_action_postdispatch>
+            <add_to_cart_before>
+                <observers>
+                    <add_to_cart_before>
+                        <class>fixaddtocartmage18/observer</class>
+                        <method>hookToAddToCartBefore</method>
+                    </add_to_cart_before>
+                </observers>
+            </add_to_cart_before>
+            <add_to_cart_after>
+                <observers>
+                    <add_to_cart_after>
+                        <class>fixaddtocartmage18/observer</class>
+                        <method>hookToAddToCartAfter</method>
+                    </add_to_cart_after>
+                </observers>
+            </add_to_cart_after>
+        </events>
   </global>
 </config>
