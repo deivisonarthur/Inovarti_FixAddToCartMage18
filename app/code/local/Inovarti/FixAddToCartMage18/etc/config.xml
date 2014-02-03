@@ -9,7 +9,7 @@
       <models>
           <checkout>
               <rewrite>
-                  <cart>inovarti_fixaddtocartmage18_Model_Checkout_Cart</cart>
+                  <cart>Inovarti_FixAddToCartMage18_Model_Checkout_Cart</cart>
               </rewrite>
           </checkout>
       </models>
